@@ -14,6 +14,9 @@ def main():
     screen_size = (SCREEN_WIDTH, SCREEN_HEIGHT)
     screen = pygame.display.set_mode(screen_size)
 
+    clock = pygame.time.Clock()
+    dt = 0
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -22,6 +25,9 @@ def main():
         # update display
         screen.fill((0,0,0))
         pygame.display.flip()
+
+        #wait ...
+        dt = clock.tick(60) / 1000 # convert to seconds
 
 if __name__ == "__main__":
     main()
